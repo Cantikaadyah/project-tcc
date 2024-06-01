@@ -23,6 +23,11 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Copy custom nginx configuration (opsional)
 # COPY nginx.conf /etc/nginx/nginx.conf
 
+# Copy source files
+COPY index.js /usr/share/nginx/html
+COPY app.js /usr/share/nginx/html
+COPY src /usr/share/nginx/html/src
+
 # Expose port
 EXPOSE 80
 
